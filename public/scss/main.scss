@@ -1,0 +1,1197 @@
+@font-face {
+    font-family: GeoArt;
+    src: url(../fonts/firago-regular.ttf);
+}
+
+* {
+    transition: all 0.4s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 3.4rem;
+    overflow-x: hidden;
+}
+
+main {
+    //background-color: #dcdcdb;
+    background-color: #54707b;
+
+}
+
+@import "mixins";
+
+//პირველი გვერდისთვის.
+.GeoArtText {
+    display: block;
+    @include geoarttext;
+}
+
+@include scrollbar;
+
+
+
+/* ჰეადერი
+-------------------------------------------------- */
+#navbarCollapse {
+    margin-left: 10em
+}
+
+#Headeri {
+    padding-left: 30px;
+    padding-right: 90px;
+    a {
+        .LogoImg {
+            width: 120px;
+            position: absolute;
+            top: -8px;
+        }
+    }
+
+.searchBtn {
+    width: 48px;
+    height: 40px;
+    //border-radius: 50%;
+    border: 2px solid #54707b;
+    padding: 0;
+    background-color: #213e4b;
+}
+.searchBtn:hover {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+}
+
+#UserDropdown {
+    a {
+        .rounded-circle {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5em;
+            color: #54707b;
+        }
+        .rounded-circle:hover {
+
+        }
+    }
+    a:hover {
+        color: white;
+    }
+}
+
+.authReg{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    outline: none;
+    color: white;
+    background: #213e4b;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    margin-right: 10px;
+    border: 2px solid #54707b;
+}
+.authReg:before{
+    position: absolute;
+    content: '';
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(5px);
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    transition: opacity .3s ease-in-out;
+    animation: animate 20s linear infinite;
+}
+.authReg:hover:before{
+    opacity: 1;
+}
+.authReg:hover:active{
+    background: none;
+}
+.authReg:hover:active:before{
+    filter: blur(2px);
+}
+@keyframes animate {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+}
+
+
+/* Auth/Reg
+-------------------------------------------------- */
+.card-headeri {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #213e4b;
+    color: white;
+    padding-left: 20px;
+}
+.card-bodyy {
+    background-color: #54707b;
+    color: white;
+    padding-top: 30px;
+}
+
+.AuthDiv {
+    position: relative;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 180px;
+    .booksyBtn {
+        background: none;
+        border: 2px solid white;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        width: 180px;
+        //margin: 10px;
+        cursor: pointer;
+        transition: color 0.4s linear;
+        border-radius: 5px;
+        color: white;
+    }
+    .booksyBtn:hover {
+        color: #fff;
+    }
+    .booksyBtn:before {
+        border-radius: 5px;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: green;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform-origin: 0 0;
+        transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+    }
+    .btn1::before {
+        transform: scaleX(0);
+    }
+    .btn1:hover::before {
+        transform: scaleX(1);
+    }
+}
+
+
+/* კარუსელი
+-------------------------------------------------- */
+.carousel {
+    margin-bottom: 1rem;
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+#CaruselSlideBtn1, #CaruselSlideBtn2, #CaruselSlideBtn3 {
+    background-color: blue;
+}
+
+.CarouselText1 {
+    color: navajowhite;
+    font-weight: 600;
+}
+
+.CarouselText2 {
+    color: #ff4314;
+    font-weight: 600;
+}
+
+.CarouselText3 {
+    color: #2c3b50;
+    font-weight: 600;
+}
+
+.carouselimg {
+    width: 1920px;
+}
+
+/* საიტის სერვისი.
+-------------------------------------------------- */
+.city {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+
+    background: #5c6664;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:#fff;
+    cursor:pointer;
+    font-size: 1em;
+    //font-family: 'Open Sans', sans-serif;
+    @include scrollbar;
+}
+city::-ms-expand {
+    display: none;
+}
+.city {
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 3em;
+    line-height: 3;
+    //background: #5c6664;
+    background: #213e4b;
+
+    overflow: hidden;
+    border-radius: .25em;
+}
+.city::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #2b2e2e;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+}
+.city:hover::after {
+    color: #23b499;
+}
+
+
+.recomended {
+    background-color: white;
+    border-radius: 16px;
+}
+
+.marketing {
+    background-color: white;
+    border-radius: 16px 16px 0 0;
+
+    .featurette {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .col-md-7 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 3em;
+            h3 {
+                @include geoarttext;
+                font-size: 300%;
+            }
+
+        }
+        .col-md-5 {
+            display: flex;
+            justify-content: center;
+            .frontimg {
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+
+
+/* ავტორიზაცია/რეგისტრაცია.
+-------------------------------------------------- */
+.login_register {
+    background: url('../img/backgroundbarber.png') center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ძებნის რეზულტატი მენიუ-სლაიდერით.
+-------------------------------------------------- */
+.salon_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border: 1px solid lightslategray;
+    border-radius: 6px;
+    transition: all 0.5s ease;
+    background-color: white;
+
+    .SalonPosterDiv {
+        .salonposterimg {
+            width: 100%;
+            height: 220px;
+            border-radius: 4px;
+        }
+    }
+
+    .SalonNameDiv {
+        width: 100%;
+        padding: 10px;
+        min-height: 6em;
+        font-size: 120%;
+        text-align: center;
+
+        .motto {
+            font-size: 80%;
+        }
+    }
+
+    .SalonRating1 {
+        width: 100%;
+        text-align: right;
+        font-size: 120%;
+        margin-bottom: 1em;
+
+        i {
+            color: gold;
+            font-size: 80%;
+        }
+    }
+}
+
+.salon_card:hover {
+    transform: translateY(-15px);
+}
+
+.notfoundDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    //font-size: 120%;
+    //@include geoarttext;
+    font-size: 120%;
+    color: white;
+}
+
+.BestRating1 {
+    width: 100%;
+    text-align: right;
+    font-size: 120%;
+    margin-bottom: 1em;
+
+    i {
+        color: gold;
+        font-size: 80%;
+    }
+}
+
+
+/* სალონი /
+-------------------------------------------------- */
+.salonPage {
+    background-color: white;
+    margin-top: -0.2em;
+    padding: 0;
+
+    .GeoArtText {
+        display: block;
+        @include geoarttext;
+        margin-top: 1em;
+    }
+    .GeoArtMotto {
+        display: block;
+        @include geoarttext;
+        font-size: 100%;
+    }
+
+    .mainRow {
+        /* სალონი /მარცხენა სვეტი. */
+        .salonLeftColumn {
+            padding-top: 1em;
+            #map {
+                @include workdays;
+                height: 475px;
+
+            }
+
+            .WorkDays {
+                @include workdays;
+
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        /* სალონი / ცენტრალური სვეტი. */
+        .salonCentralColumn {
+            border-radius: 0 0 16px 16px;
+            //background-color: #f0f69d;
+
+            .SalonPhotoDiv {
+                overflow-y: hidden;
+                margin-bottom: 3em;
+
+                .SalonPhoto {
+                    width: 100%;
+                }
+            }
+
+            /* თანამშრომლის კარტები. */
+            .StaffCardsDiv {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+                height: 380px;
+                overflow-x: hidden;
+                background-color: #FF676D;
+                border-radius: 16px;
+                margin: 50px 10px 10px 10px;
+
+                .Staffcard {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-content: space-between;
+                    width: 170px;
+                    height: 320px;
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 5px;
+                    box-shadow: 0 0 10px rgba(26, 9, 9, 0.4);
+                    margin: 1em;
+                    color: black;
+
+                    .authRequest {
+                        font-size: 70%;
+                        color: red;
+                    }
+
+                    .imgBox {
+                        border: 3px solid #e88282;
+                        height: 170px;
+                        overflow-y: hidden;
+                        padding: 0;
+
+                        .Staffimg {
+                            position: relative;
+                            width: 100%;
+                        }
+                    }
+
+                    .Fio {
+                        font-size: 75%;
+                    }
+                    @include greenlinebtn;
+                }
+            }
+        }
+
+        /* სალონი / მარჯვენა სვეტი. */
+        .SalonRightColumn {
+            border-radius: 0 10px 0 0;
+            padding-top: 1em;
+
+            .headertext {
+                display: block;
+                margin: 3em 0 1em 0;
+                @include geoarttext;
+                font-size: 150%;
+            }
+
+            .WorkDays {
+                .headertext {
+                    display: block;
+                    margin: 0.5em 0 1em 0;
+                    @include geoarttext;
+                    font-size: 150%;
+                }
+                @include workdays;
+
+                .BFio {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    margin-bottom: 1em;
+                }
+
+                /* რეიტინგის სტატისტიკა. */
+                .skills {
+                    @include skills;
+                }
+
+                .WorkingHours_flex {
+                    @include workinghours_flex;
+                }
+
+                .GoldenFrames {
+                    @include goldenframes;
+                }
+            }
+
+            /* უკუკავშირი. */
+            @include rating;
+        }
+    }
+}
+
+
+/* სტილისტის გვერდი. */
+.BarberPage {
+    background-color: white;
+    margin-top: -0.2em;
+    padding: 0;
+
+    .headertext {
+        display: block;
+        margin: 3em 0 1em 0;
+        @include geoarttext;
+        font-size: 150%;
+    }
+
+    .GeoArtText {
+        @include geoarttext;
+    }
+
+    .mainRow {
+        .barberLeftPage {
+
+            .BarberImgDiv {
+                height: 700px;
+                overflow-y: hidden;
+
+                .BarberImg {
+                    width: 100%;
+                    border-radius: 10px 0 0 0;
+                }
+            }
+
+            .card {
+                padding: 50px;
+                margin-bottom: 5em;
+
+                .card-header {
+                    text-align: center;
+                }
+
+                .card-body {
+                    padding: 0;
+
+                    #calendar {
+                        .fc-today {
+                            background: #d3f5f3;
+                        }
+
+                        .fc-day:hover {
+                            background: #d3f5f3;
+                        }
+                    }
+
+                    .abilities {
+                        //overflow-x: scroll;
+
+                        table {
+                            width: 100%;
+                            background-color: #cde3f6;
+                            border: 3px solid #5e97c7;
+                            //margin-bottom: 1em;
+                            margin-top: 1em;
+                            overflow-x: scroll;
+                            margin-bottom: 3em;
+
+                            th {
+                                text-align: center;
+                                padding: 10px 0 10px 0;
+                                border: 1px solid #5e97c7;
+                            }
+
+                            .check {
+                                width: auto;
+                                height: 30px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 20px;
+                                @include checkbox;
+
+                            }
+
+                            .service {
+                                background-color: #5e97c7;
+
+                                input {
+                                    width: 100%;
+                                    text-align: left;
+                                }
+                            }
+
+                            .price {
+                                text-align: center;
+
+                                input {
+                                    width: 50px;
+                                    text-align: center;
+                                }
+                            }
+
+                            .time {
+                                text-align: center;
+
+                                input {
+                                    width: 50px;
+                                    text-align: center;
+                                }
+                            }
+
+                            td {
+                                border: 1px solid #5e97c7;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                .booksyForm {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    border: 2px solid #24424e;
+                    margin-top: 1em;
+
+                    .book {
+                        font-size: 120%;
+                    }
+
+                    #startdatee, #starthourr, #allProcT, #allprice {
+                        font-weight: bold;
+                        color: #213e4b;
+                    }
+                }
+            }
+        }
+
+
+        .BarberRightColumn {
+            text-align: center;
+            padding-top: 1em;
+
+            .WorkDays {
+                @include workdays;
+                padding-bottom: 20px;
+
+                .headertext {
+                    display: block;
+                    margin: 0.5em 0 1em 0;
+                    @include geoarttext;
+                    font-size: 150%;
+                }
+                .BFio {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    margin-bottom: 1em;
+
+                }
+
+                /* რეიტინგის სტატისტიკა. */
+                .skills {
+                    @include skills;
+                }
+
+                .WorkingHours_flex {
+                    @include workinghours_flex;
+                }
+
+                .GoldenFrames {
+                    @include goldenframes;
+                }
+            }
+
+
+            /* უკუკავშირი. */
+            @include rating;
+        }
+    }
+}
+
+
+/* სტილისტის ნამუშევრების გალერეა. */
+.BarberFlipster {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+    text-align: center;
+    color: navajowhite;
+    font-size: 200%;
+    font-weight: 400;
+
+    .carousel {
+        width: 300px;
+        margin: 100px auto 0;
+        overflow: visible;
+
+        img {
+            -webkit-box-reflect: below 20px linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+        }
+    }
+}
+
+
+/* Footer-ი.
+-------------------------------------------------- */
+footer {
+    background-color: #1e2734;
+
+    .footertext {
+        text-decoration: none;
+        margin: 0.5em;
+        color: #9abef5;
+    }
+
+    .footertext:hover {
+        color: white;
+        margin: 0.5em;
+    }
+
+    .copyright {
+        color: #979595;
+        text-align: center;
+    }
+}
+
+
+/*  =========  Media  ===============  */
+@media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        padding-top: 3.5rem;
+    }
+    #reg-login-btns {
+        margin-top: 5.5em;
+    }
+    .carouselimg {
+        width: 450px;
+    }
+    .frontimg {
+        width: 60%;
+    }
+    .carousel-item {
+        height: 11rem;
+    }
+    #UserDropdown {
+        margin: 1em 0 0.5em 0;
+    }
+    .carousel {
+        margin-top: -0.15em;
+    }
+
+    .AuthDiv {
+        right: -5.5em;
+    }
+
+    /* ჰეადერი
+-------------------------------------------------- */
+    #navbarCollapse {
+        margin-top: 2em;
+        margin-left: 15px;
+    }
+
+    #Headeri {
+        padding-left: 15px;
+        padding-right: 15px;
+        a {
+            .LogoImg {
+                width: 80px;
+                position: absolute;
+                top: -3px;
+            }
+        }
+    }
+
+
+
+    /* საიტის სერვისი.
+-------------------------------------------------- */
+    .city {
+
+    }
+    .recomended {
+
+    }
+    .marketing {
+
+        .featurette {
+            font-size: 70%;
+            .col-md-7 {
+
+                h3 {
+                    @include geoarttext;
+                }
+
+            }
+            .col-md-5 {
+
+                .frontimg {
+
+                }
+            }
+        }
+    }
+
+
+
+
+
+    /* მთავრი სვეტი. */
+    .SalonPhotoDiv {
+        margin-bottom: 2em;
+
+        .SalonPhoto {
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    /* თანამშრომლის კარტები. */
+    .StaffCardsDiv {
+        height: 90vh;
+        overflow-x: hidden;
+
+        .Staffcard {
+            width: 260px;
+            height: 380px;
+
+            .imgBox {
+                height: 290px;
+                overflow-y: hidden;
+
+                .Staffimg {
+                    position: relative;
+                    width: 100%;
+                }
+            }
+
+            .Fio {
+                font-size: 75%;
+            }
+
+            .Stats {
+                width: 100%;
+            }
+        }
+    }
+
+
+    /* სალონი /
+-------------------------------------------------- */
+    .salonPage {
+        overflow-x: hidden;
+
+        .GeoArtText {
+        }
+
+        .mainRow {
+            /* სალონი /მარცხენა სვეტი. */
+            .salonLeftColumn {
+                #map {
+                }
+
+                .WorkDays {
+                    div {
+                    }
+                }
+            }
+
+            /* სალონი / ცენტრალური სვეტი. */
+            .salonCentralColumn {
+                .SalonPhotoDiv {
+                    height: auto;
+                    margin-top: 5em;
+
+                    .SalonPhoto {
+                    }
+                }
+
+                /* თანამშრომლის კარტები. */
+                .StaffCardsDiv {
+                    margin-bottom: 5em;
+
+                    .Staffcard {
+                        .authRequest {
+                        }
+
+                        .imgBox {
+                            .Staffimg {
+                            }
+                        }
+
+                        .Fio {
+                        }
+
+                        .booksyBtn {
+                        }
+
+                        .booksyBtn:hover {
+                        }
+                    }
+                }
+            }
+
+            /* სალონი / მარჯვენა სვეტი. */
+            .SalonRightColumn {
+                .headertext {
+                }
+
+                .WorkDays {
+                    .BFio {
+                    }
+
+                    /* რეიტინგის სტატისტიკა. */
+                    .skills {
+                        .progress-bar {
+                        }
+
+                        .progress-bar div {
+                        }
+
+                        .progress-bar div span {
+                        }
+                    }
+
+                    .WorkingHours_flex {
+                    }
+
+                    .GoldenFrames {
+                        .salonGstar {
+                            .Gstar {
+                            }
+                        }
+
+                        .Salonrating {
+                        }
+                    }
+                }
+
+                /* უკუკავშირი. */
+                .rating {
+                }
+
+                .rating input {
+                }
+
+                .rating label {
+                }
+
+                .rating label:before {
+                }
+
+                .rating label:after {
+                }
+
+                .rating label:hover:after,
+                .rating label:hover ~ label:after,
+                .rating input:checked ~ label:after {
+                }
+
+                .FeedbackCreate {
+                    .FeedbackTitle {
+                    }
+
+                    .FeedbackText {
+                        textarea {
+                        }
+                    }
+                }
+
+                .Feedbacks {
+                    textarea {
+
+                    }
+
+                    .FR {
+                        i {
+                        }
+
+                        .ratingstar {
+                        }
+
+                        .ratingvalue {
+                        }
+                    }
+
+                    .FI {
+                    }
+
+                    .FeedbackTextarea {
+                    }
+                }
+            }
+        }
+    }
+
+
+    /* სტილისტის გვერდი. */
+    .BarberPage {
+        overflow-x: hidden;
+
+        .GeoArtText {
+            font-size: 150%;
+        }
+
+        .mainRow {
+            .barberLeftPage {
+                .BarberImgDiv {
+                    height: auto;
+
+                    .BarberImg {
+                    }
+                }
+
+                .card {
+                    padding: 10px;
+
+                    .card-header {
+                    }
+
+                    .card-body {
+                        #calendar {
+                            .fc-today {
+                            }
+
+                            .fc-day:hover {
+                            }
+                        }
+
+                        .abilities {
+                            overflow-x: scroll;
+                            table {
+                                th {
+                                }
+
+                                .check {
+                                }
+
+                                .service {
+                                    input {
+                                        width: 250px;
+                                    }
+                                }
+
+                                .price {
+                                    input {
+                                    }
+                                }
+
+                                .time {
+                                    input {
+                                    }
+                                }
+
+                                td {
+                                }
+                            }
+                        }
+                    }
+
+                    .booksyForm {
+                        .book {
+                        }
+
+                        #startdatee, #starthourr, #allProcT, #allprice {
+                        }
+                    }
+                }
+
+            }
+
+            .BarberRightColumn {
+                .WorkDays {
+                    .BFio {
+                    }
+
+                    /* რეიტინგის სტატისტიკა. */
+                    .skills {
+                        .progress-bar {
+                        }
+
+                        .progress-bar div {
+                        }
+
+                        .progress-bar div span {
+                        }
+                    }
+
+                    .WorkingHours_flex {
+                    }
+
+                    .GoldenFrames {
+                        .salonGstar {
+                            .Gstar {
+                            }
+                        }
+
+                        .Salonrating {
+                        }
+                    }
+                }
+
+                .Feedbacks {
+                    textarea {
+
+                    }
+
+                    .FR {
+                        i {
+                        }
+
+                        .ratingstar {
+                        }
+
+                        .ratingvalue {
+                        }
+                    }
+
+                    .FI {
+                    }
+
+                    .FeedbackTextarea {
+                    }
+                }
+            }
+        }
+    }
+}
