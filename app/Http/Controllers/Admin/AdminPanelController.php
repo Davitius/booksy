@@ -42,7 +42,7 @@ class AdminPanelController extends Controller
         $Ones = count($One);
         $CountEvents = count($Events);
 
-//        dd($test);
+//        dd($testi);
 
         if ($Fives == 0 && $Fours == 0 && $Threes == 0 && $Twos == 0 && $Ones == 0) {
 
