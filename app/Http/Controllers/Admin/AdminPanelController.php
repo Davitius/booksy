@@ -42,6 +42,8 @@ class AdminPanelController extends Controller
         $Ones = count($One);
         $CountEvents = count($Events);
 
+        dd($test);
+
         if ($Fives == 0 && $Fours == 0 && $Threes == 0 && $Twos == 0 && $Ones == 0) {
 
             $Stats = ['Ones' => 0, 'Twos' => 0, 'Threes' => 0, 'Fours' => 0, 'Fives' => 0, 'Sul' => 0, 'Rating' => 0,
