@@ -1,0 +1,1069 @@
+@charset "UTF-8";
+@font-face {
+  font-family: GeoArt;
+  src: url(../fonts/firago-regular.ttf); }
+* {
+  transition: all 0.4s ease; }
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 3.4rem;
+  overflow-x: hidden; }
+
+main {
+  background-color: #54707b; }
+
+.GeoArtText {
+  display: block;
+  font-family: GeoArt;
+  text-align: center;
+  color: #2d3338;
+  font-weight: bold;
+  font-size: 200%; }
+
+/*=============სქროლბარის დიზაინი================*/
+::-webkit-scrollbar {
+  width: 10px; }
+
+::-webkit-scrollbar-track {
+  background: #54707b;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+  border-radius: 5px; }
+
+::-webkit-scrollbar-thumb {
+  background: #284958;
+  border-radius: 5px;
+  border: 1px solid #d4d4d4; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #213e4b; }
+
+/* ჰეადერი
+-------------------------------------------------- */
+#navbarCollapse {
+  margin-left: 10em; }
+
+#Headeri {
+  padding-left: 30px;
+  padding-right: 90px; }
+  #Headeri a .LogoImg {
+    width: 120px;
+    position: absolute;
+    top: -8px; }
+  #Headeri .searchBtn {
+    width: 48px;
+    height: 40px;
+    border: 2px solid #54707b;
+    padding: 0;
+    background-color: #213e4b; }
+  #Headeri .searchBtn:hover {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    transform: rotate(-360deg); }
+  #Headeri #UserDropdown a .rounded-circle {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5em;
+    color: #54707b; }
+  #Headeri #UserDropdown a:hover {
+    color: white; }
+  #Headeri .authReg {
+    position: relative;
+    height: 40px;
+    width: 150px;
+    outline: none;
+    color: white;
+    background: #213e4b;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    margin-right: 10px;
+    border: 2px solid #54707b; }
+  #Headeri .authReg:before {
+    position: absolute;
+    content: '';
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(5px);
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    transition: opacity .3s ease-in-out;
+    animation: animate 20s linear infinite; }
+  #Headeri .authReg:hover:before {
+    opacity: 1; }
+  #Headeri .authReg:hover:active {
+    background: none; }
+  #Headeri .authReg:hover:active:before {
+    filter: blur(2px); }
+@keyframes animate {
+  0% {
+    background-position: 0 0; }
+  50% {
+    background-position: 400% 0; }
+  100% {
+    background-position: 0 0; } }
+/* Auth/Reg
+-------------------------------------------------- */
+.card-headeri {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #213e4b;
+  color: white;
+  padding-left: 20px; }
+
+.card-bodyy {
+  background-color: #54707b;
+  color: white;
+  padding-top: 30px; }
+
+.AuthDiv {
+  position: relative;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 180px; }
+  .AuthDiv .booksyBtn {
+    background: none;
+    border: 2px solid white;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    width: 180px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    border-radius: 5px;
+    color: white; }
+  .AuthDiv .booksyBtn:hover {
+    color: #fff; }
+  .AuthDiv .booksyBtn:before {
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7); }
+  .AuthDiv .btn1::before {
+    transform: scaleX(0); }
+  .AuthDiv .btn1:hover::before {
+    transform: scaleX(1); }
+
+/* კარუსელი
+-------------------------------------------------- */
+.carousel {
+  margin-bottom: 1rem; }
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10; }
+
+#CaruselSlideBtn1, #CaruselSlideBtn2, #CaruselSlideBtn3 {
+  background-color: blue; }
+
+.CarouselText1 {
+  color: navajowhite;
+  font-weight: 600; }
+
+.CarouselText2 {
+  color: #ff4314;
+  font-weight: 600; }
+
+.CarouselText3 {
+  color: #2c3b50;
+  font-weight: 600; }
+
+.carouselimg {
+  width: 1920px; }
+
+/* საიტის სერვისი.
+-------------------------------------------------- */
+.city {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #5c6664;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  /*=============სქროლბარის დიზაინი================*/ }
+  .city ::-webkit-scrollbar {
+    width: 10px; }
+  .city ::-webkit-scrollbar-track {
+    background: #54707b;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+    border-radius: 5px; }
+  .city ::-webkit-scrollbar-thumb {
+    background: #284958;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4; }
+  .city ::-webkit-scrollbar-thumb:hover {
+    background: #213e4b; }
+
+city::-ms-expand {
+  display: none; }
+
+.city {
+  position: relative;
+  display: flex;
+  width: 15em;
+  height: 3em;
+  line-height: 3;
+  background: #213e4b;
+  overflow: hidden;
+  border-radius: .25em; }
+
+.city::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease; }
+
+.city:hover::after {
+  color: #23b499; }
+
+.recomended {
+  background-color: white;
+  border-radius: 16px; }
+
+.marketing {
+  background-color: white;
+  border-radius: 16px 16px 0 0; }
+  .marketing .featurette {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap; }
+    .marketing .featurette .col-md-7 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 3em; }
+      .marketing .featurette .col-md-7 h3 {
+        font-family: GeoArt;
+        text-align: center;
+        color: #2d3338;
+        font-weight: bold;
+        font-size: 200%;
+        font-size: 300%; }
+    .marketing .featurette .col-md-5 {
+      display: flex;
+      justify-content: center; }
+      .marketing .featurette .col-md-5 .frontimg {
+        border-radius: 20px; }
+
+/* ავტორიზაცია/რეგისტრაცია.
+-------------------------------------------------- */
+.login_register {
+  background: url("../img/backgroundbarber.png") center top;
+  background-size: cover;
+  background-attachment: fixed; }
+
+/* ძებნის რეზულტატი მენიუ-სლაიდერით.
+-------------------------------------------------- */
+.salon_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid lightslategray;
+  border-radius: 6px;
+  transition: all 0.5s ease;
+  background-color: white; }
+  .salon_card .SalonPosterDiv .salonposterimg {
+    width: 100%;
+    height: 220px;
+    border-radius: 4px; }
+  .salon_card .SalonNameDiv {
+    width: 100%;
+    padding: 10px;
+    min-height: 6em;
+    font-size: 120%;
+    text-align: center; }
+    .salon_card .SalonNameDiv .motto {
+      font-size: 80%; }
+  .salon_card .SalonRating1 {
+    width: 100%;
+    text-align: right;
+    font-size: 120%;
+    margin-bottom: 1em; }
+    .salon_card .SalonRating1 i {
+      color: gold;
+      font-size: 80%; }
+
+.salon_card:hover {
+  transform: translateY(-15px); }
+
+.notfoundDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 120%;
+  color: white; }
+
+.BestRating1 {
+  width: 100%;
+  text-align: right;
+  font-size: 120%;
+  margin-bottom: 1em; }
+  .BestRating1 i {
+    color: gold;
+    font-size: 80%; }
+
+/* სალონი /
+-------------------------------------------------- */
+.salonPage {
+  background-color: white;
+  margin-top: -0.2em;
+  padding: 0; }
+  .salonPage .GeoArtText {
+    display: block;
+    font-family: GeoArt;
+    text-align: center;
+    color: #2d3338;
+    font-weight: bold;
+    font-size: 200%;
+    margin-top: 1em; }
+  .salonPage .GeoArtMotto {
+    display: block;
+    font-family: GeoArt;
+    text-align: center;
+    color: #2d3338;
+    font-weight: bold;
+    font-size: 200%;
+    font-size: 100%; }
+  .salonPage .mainRow {
+    /* სალონი /მარცხენა სვეტი. */
+    /* სალონი / ცენტრალური სვეტი. */
+    /* სალონი / მარჯვენა სვეტი. */ }
+    .salonPage .mainRow .salonLeftColumn {
+      padding-top: 1em; }
+      .salonPage .mainRow .salonLeftColumn #map {
+        background-color: white;
+        margin: 0 10px 20px 10px;
+        padding: 10px;
+        border-radius: 10px;
+        overflow-x: hidden;
+        text-align: left;
+        border: 3px solid #f0f69d;
+        box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5);
+        height: 475px; }
+      .salonPage .mainRow .salonLeftColumn .WorkDays {
+        background-color: white;
+        margin: 0 10px 20px 10px;
+        padding: 10px;
+        border-radius: 10px;
+        overflow-x: hidden;
+        text-align: left;
+        border: 3px solid #f0f69d;
+        box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+        .salonPage .mainRow .salonLeftColumn .WorkDays div {
+          display: flex;
+          justify-content: space-between; }
+    .salonPage .mainRow .salonCentralColumn {
+      border-radius: 0 0 16px 16px;
+      /* თანამშრომლის კარტები. */ }
+      .salonPage .mainRow .salonCentralColumn .SalonPhotoDiv {
+        overflow-y: hidden;
+        margin-bottom: 3em; }
+        .salonPage .mainRow .salonCentralColumn .SalonPhotoDiv .SalonPhoto {
+          width: 100%; }
+      .salonPage .mainRow .salonCentralColumn .StaffCardsDiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 380px;
+        overflow-x: hidden;
+        background-color: #FF676D;
+        border-radius: 16px;
+        margin: 50px 10px 10px 10px; }
+        .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          align-content: space-between;
+          width: 170px;
+          height: 320px;
+          background-color: white;
+          border-radius: 10px;
+          padding: 5px;
+          box-shadow: 0 0 10px rgba(26, 9, 9, 0.4);
+          margin: 1em;
+          color: black; }
+          .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .authRequest {
+            font-size: 70%;
+            color: red; }
+          .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .imgBox {
+            border: 3px solid #e88282;
+            height: 170px;
+            overflow-y: hidden;
+            padding: 0; }
+            .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .imgBox .Staffimg {
+              position: relative;
+              width: 100%; }
+          .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .Fio {
+            font-size: 75%; }
+          .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .booksyDiv {
+            margin-top: 1em;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-left: 90px; }
+            .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .booksyDiv .booksyBtn {
+              background: none;
+              border: 2px solid green;
+              text-transform: uppercase;
+              cursor: pointer;
+              transition: color 0.4s linear;
+              border-radius: 5px; }
+            .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .booksyDiv .booksyBtn:hover {
+              color: #fff; }
+            .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .booksyDiv .booksyBtn:before {
+              border-radius: 5px;
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: green;
+              z-index: -1;
+              transition: transform 0.5s;
+              transform-origin: 0 0;
+              transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7); }
+            .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .booksyDiv .btn1::before {
+              transform: scaleX(0); }
+            .salonPage .mainRow .salonCentralColumn .StaffCardsDiv .Staffcard .booksyDiv .btn1:hover::before {
+              transform: scaleX(1); }
+    .salonPage .mainRow .SalonRightColumn {
+      border-radius: 0 10px 0 0;
+      padding-top: 1em;
+      /* უკუკავშირი. */ }
+      .salonPage .mainRow .SalonRightColumn .headertext {
+        display: block;
+        margin: 3em 0 1em 0;
+        font-family: GeoArt;
+        text-align: center;
+        color: #2d3338;
+        font-weight: bold;
+        font-size: 200%;
+        font-size: 150%; }
+      .salonPage .mainRow .SalonRightColumn .WorkDays {
+        background-color: white;
+        margin: 0 10px 20px 10px;
+        padding: 10px;
+        border-radius: 10px;
+        overflow-x: hidden;
+        text-align: left;
+        border: 3px solid #f0f69d;
+        box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5);
+        /* რეიტინგის სტატისტიკა. */ }
+        .salonPage .mainRow .SalonRightColumn .WorkDays .headertext {
+          display: block;
+          margin: 0.5em 0 1em 0;
+          font-family: GeoArt;
+          text-align: center;
+          color: #2d3338;
+          font-weight: bold;
+          font-size: 200%;
+          font-size: 150%; }
+        .salonPage .mainRow .SalonRightColumn .WorkDays .BFio {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          margin-bottom: 1em; }
+        .salonPage .mainRow .SalonRightColumn .WorkDays .skills {
+          text-align: left; }
+          .salonPage .mainRow .SalonRightColumn .WorkDays .skills i {
+            font-size: 50%;
+            color: gold; }
+          .salonPage .mainRow .SalonRightColumn .WorkDays .skills .progress-bar {
+            background: white;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            border: 1px solid gold;
+            text-align: left;
+            padding-right: 35px; }
+          .salonPage .mainRow .SalonRightColumn .WorkDays .skills .progress-bar div {
+            height: 15px;
+            border-radius: 5px;
+            background: gold; }
+          .salonPage .mainRow .SalonRightColumn .WorkDays .skills .progress-bar div span {
+            height: 40px;
+            width: 38px;
+            border-radius: 50%;
+            background: greenyellow;
+            float: right;
+            margin-top: -13px;
+            margin-right: -35px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px; }
+        .salonPage .mainRow .SalonRightColumn .WorkDays .WorkingHours_flex {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around; }
+        .salonPage .mainRow .SalonRightColumn .WorkDays .GoldenFrames {
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: 1em;
+          margin-top: 1em; }
+          .salonPage .mainRow .SalonRightColumn .WorkDays .GoldenFrames .salonGstar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid navajowhite;
+            border-radius: 10px;
+            height: 170px;
+            width: 8em;
+            box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+            .salonPage .mainRow .SalonRightColumn .WorkDays .GoldenFrames .salonGstar .Gstar {
+              width: 60%; }
+          .salonPage .mainRow .SalonRightColumn .WorkDays .GoldenFrames .Salonrating {
+            font-size: 200%;
+            color: #f69945; }
+      .salonPage .mainRow .SalonRightColumn .rating {
+        transform: rotateY(180deg);
+        display: flex;
+        background-color: #cde3f6;
+        border-radius: 6px;
+        justify-content: center;
+        border: 3px solid #5e97c7;
+        margin: 0 10px 20px 10px; }
+      .salonPage .mainRow .SalonRightColumn .rating input {
+        display: none; }
+      .salonPage .mainRow .SalonRightColumn .rating label {
+        padding-bottom: 10px;
+        display: block;
+        cursor: pointer;
+        width: 50px;
+        background-color: #cde3f6; }
+      .salonPage .mainRow .SalonRightColumn .rating label:before {
+        content: '\f005';
+        font-family: fontAwesome;
+        position: relative;
+        display: block;
+        font-size: 35px;
+        color: white;
+        text-shadow: 0 9px 5px rgba(0, 0, 0, 0.5);
+        margin-right: 12px; }
+      .salonPage .mainRow .SalonRightColumn .rating label:after {
+        content: '\f005';
+        font-family: fontAwesome;
+        position: absolute;
+        display: block;
+        font-size: 35px;
+        color: yellow;
+        top: 0;
+        opacity: 0;
+        transition: 0.5s;
+        text-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+      .salonPage .mainRow .SalonRightColumn .rating label:hover:after,
+      .salonPage .mainRow .SalonRightColumn .rating label:hover ~ label:after,
+      .salonPage .mainRow .SalonRightColumn .rating input:checked ~ label:after {
+        opacity: 1; }
+      .salonPage .mainRow .SalonRightColumn .FeedbackCreate {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 10px 50px 10px;
+        min-height: 10em; }
+        .salonPage .mainRow .SalonRightColumn .FeedbackCreate .FeedbackTitle {
+          background-color: lightskyblue; }
+        .salonPage .mainRow .SalonRightColumn .FeedbackCreate .FeedbackText textarea {
+          font-size: 90%; }
+      .salonPage .mainRow .SalonRightColumn .Feedbacks {
+        background-color: white;
+        margin: 0 10px 20px 10px;
+        padding: 10px;
+        border-radius: 10px;
+        overflow-x: hidden;
+        text-align: left;
+        border: 3px solid #f0f69d;
+        box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+        .salonPage .mainRow .SalonRightColumn .Feedbacks textarea {
+          font-size: 90%; }
+        .salonPage .mainRow .SalonRightColumn .Feedbacks .FR {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1em; }
+          .salonPage .mainRow .SalonRightColumn .Feedbacks .FR i {
+            color: gold;
+            text-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+          .salonPage .mainRow .SalonRightColumn .Feedbacks .FR .ratingstar {
+            width: 20px; }
+          .salonPage .mainRow .SalonRightColumn .Feedbacks .FR .ratingvalue {
+            font-size: 100%;
+            color: orange;
+            margin-right: 1em; }
+        .salonPage .mainRow .SalonRightColumn .Feedbacks .FI {
+          padding-left: 20px; }
+        .salonPage .mainRow .SalonRightColumn .Feedbacks .FeedbackTextarea {
+          background-color: #d3f5f3; }
+
+/* სტილისტის გვერდი. */
+.BarberPage {
+  background-color: white;
+  margin-top: -0.2em;
+  padding: 0; }
+  .BarberPage .headertext {
+    display: block;
+    margin: 3em 0 1em 0;
+    font-family: GeoArt;
+    text-align: center;
+    color: #2d3338;
+    font-weight: bold;
+    font-size: 200%;
+    font-size: 150%; }
+  .BarberPage .GeoArtText {
+    font-family: GeoArt;
+    text-align: center;
+    color: #2d3338;
+    font-weight: bold;
+    font-size: 200%; }
+  .BarberPage .mainRow .barberLeftPage .BarberImgDiv {
+    height: 700px;
+    overflow-y: hidden; }
+    .BarberPage .mainRow .barberLeftPage .BarberImgDiv .BarberImg {
+      width: 100%;
+      border-radius: 10px 0 0 0; }
+  .BarberPage .mainRow .barberLeftPage .card {
+    padding: 50px;
+    margin-bottom: 5em; }
+    .BarberPage .mainRow .barberLeftPage .card .card-header {
+      text-align: center; }
+    .BarberPage .mainRow .barberLeftPage .card .card-body {
+      padding: 0; }
+      .BarberPage .mainRow .barberLeftPage .card .card-body #calendar .fc-today {
+        background: #d3f5f3; }
+      .BarberPage .mainRow .barberLeftPage .card .card-body #calendar .fc-day:hover {
+        background: #d3f5f3; }
+      .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table {
+        width: 100%;
+        background-color: #cde3f6;
+        border: 3px solid #5e97c7;
+        margin-top: 1em;
+        overflow-x: scroll;
+        margin-bottom: 3em; }
+        .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table th {
+          text-align: center;
+          padding: 10px 0 10px 0;
+          border: 1px solid #5e97c7; }
+        .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .check {
+          width: auto;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px; }
+          .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .check input[type="checkbox"] {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            -webkit-appearance: none;
+            background: #c6c6c6;
+            outline: none;
+            border-radius: 10px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); }
+          .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .check input:checked[type="checkbox"] {
+            background: green; }
+          .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .check input[type="checkbox"]:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            background: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: 0.5s; }
+          .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .check input:checked[type="checkbox"]:before {
+            left: 20px; }
+        .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .service {
+          background-color: #5e97c7; }
+          .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .service input {
+            width: 100%;
+            text-align: left; }
+        .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .price {
+          text-align: center; }
+          .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .price input {
+            width: 50px;
+            text-align: center; }
+        .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .time {
+          text-align: center; }
+          .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .time input {
+            width: 50px;
+            text-align: center; }
+        .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table td {
+          border: 1px solid #5e97c7;
+          font-weight: bold; }
+    .BarberPage .mainRow .barberLeftPage .card .booksyForm {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid #24424e;
+      margin-top: 1em; }
+      .BarberPage .mainRow .barberLeftPage .card .booksyForm .book {
+        font-size: 120%; }
+      .BarberPage .mainRow .barberLeftPage .card .booksyForm #startdatee, .BarberPage .mainRow .barberLeftPage .card .booksyForm #starthourr, .BarberPage .mainRow .barberLeftPage .card .booksyForm #allProcT, .BarberPage .mainRow .barberLeftPage .card .booksyForm #allprice {
+        font-weight: bold;
+        color: #213e4b; }
+  .BarberPage .mainRow .BarberRightColumn {
+    text-align: center;
+    padding-top: 1em;
+    /* უკუკავშირი. */ }
+    .BarberPage .mainRow .BarberRightColumn .WorkDays {
+      background-color: white;
+      margin: 0 10px 20px 10px;
+      padding: 10px;
+      border-radius: 10px;
+      overflow-x: hidden;
+      text-align: left;
+      border: 3px solid #f0f69d;
+      box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5);
+      padding-bottom: 20px;
+      /* რეიტინგის სტატისტიკა. */ }
+      .BarberPage .mainRow .BarberRightColumn .WorkDays .headertext {
+        display: block;
+        margin: 0.5em 0 1em 0;
+        font-family: GeoArt;
+        text-align: center;
+        color: #2d3338;
+        font-weight: bold;
+        font-size: 200%;
+        font-size: 150%; }
+      .BarberPage .mainRow .BarberRightColumn .WorkDays .BFio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 1em; }
+      .BarberPage .mainRow .BarberRightColumn .WorkDays .skills {
+        text-align: left; }
+        .BarberPage .mainRow .BarberRightColumn .WorkDays .skills i {
+          font-size: 50%;
+          color: gold; }
+        .BarberPage .mainRow .BarberRightColumn .WorkDays .skills .progress-bar {
+          background: white;
+          width: 100%;
+          height: 15px;
+          border-radius: 5px;
+          border: 1px solid gold;
+          text-align: left;
+          padding-right: 35px; }
+        .BarberPage .mainRow .BarberRightColumn .WorkDays .skills .progress-bar div {
+          height: 15px;
+          border-radius: 5px;
+          background: gold; }
+        .BarberPage .mainRow .BarberRightColumn .WorkDays .skills .progress-bar div span {
+          height: 40px;
+          width: 38px;
+          border-radius: 50%;
+          background: greenyellow;
+          float: right;
+          margin-top: -13px;
+          margin-right: -35px;
+          color: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px; }
+      .BarberPage .mainRow .BarberRightColumn .WorkDays .WorkingHours_flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+      .BarberPage .mainRow .BarberRightColumn .WorkDays .GoldenFrames {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1em;
+        margin-top: 1em; }
+        .BarberPage .mainRow .BarberRightColumn .WorkDays .GoldenFrames .salonGstar {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid navajowhite;
+          border-radius: 10px;
+          height: 170px;
+          width: 8em;
+          box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+          .BarberPage .mainRow .BarberRightColumn .WorkDays .GoldenFrames .salonGstar .Gstar {
+            width: 60%; }
+        .BarberPage .mainRow .BarberRightColumn .WorkDays .GoldenFrames .Salonrating {
+          font-size: 200%;
+          color: #f69945; }
+    .BarberPage .mainRow .BarberRightColumn .rating {
+      transform: rotateY(180deg);
+      display: flex;
+      background-color: #cde3f6;
+      border-radius: 6px;
+      justify-content: center;
+      border: 3px solid #5e97c7;
+      margin: 0 10px 20px 10px; }
+    .BarberPage .mainRow .BarberRightColumn .rating input {
+      display: none; }
+    .BarberPage .mainRow .BarberRightColumn .rating label {
+      padding-bottom: 10px;
+      display: block;
+      cursor: pointer;
+      width: 50px;
+      background-color: #cde3f6; }
+    .BarberPage .mainRow .BarberRightColumn .rating label:before {
+      content: '\f005';
+      font-family: fontAwesome;
+      position: relative;
+      display: block;
+      font-size: 35px;
+      color: white;
+      text-shadow: 0 9px 5px rgba(0, 0, 0, 0.5);
+      margin-right: 12px; }
+    .BarberPage .mainRow .BarberRightColumn .rating label:after {
+      content: '\f005';
+      font-family: fontAwesome;
+      position: absolute;
+      display: block;
+      font-size: 35px;
+      color: yellow;
+      top: 0;
+      opacity: 0;
+      transition: 0.5s;
+      text-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+    .BarberPage .mainRow .BarberRightColumn .rating label:hover:after,
+    .BarberPage .mainRow .BarberRightColumn .rating label:hover ~ label:after,
+    .BarberPage .mainRow .BarberRightColumn .rating input:checked ~ label:after {
+      opacity: 1; }
+    .BarberPage .mainRow .BarberRightColumn .FeedbackCreate {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 10px 50px 10px;
+      min-height: 10em; }
+      .BarberPage .mainRow .BarberRightColumn .FeedbackCreate .FeedbackTitle {
+        background-color: lightskyblue; }
+      .BarberPage .mainRow .BarberRightColumn .FeedbackCreate .FeedbackText textarea {
+        font-size: 90%; }
+    .BarberPage .mainRow .BarberRightColumn .Feedbacks {
+      background-color: white;
+      margin: 0 10px 20px 10px;
+      padding: 10px;
+      border-radius: 10px;
+      overflow-x: hidden;
+      text-align: left;
+      border: 3px solid #f0f69d;
+      box-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+      .BarberPage .mainRow .BarberRightColumn .Feedbacks textarea {
+        font-size: 90%; }
+      .BarberPage .mainRow .BarberRightColumn .Feedbacks .FR {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em; }
+        .BarberPage .mainRow .BarberRightColumn .Feedbacks .FR i {
+          color: gold;
+          text-shadow: 0 9px 5px rgba(0, 0, 0, 0.5); }
+        .BarberPage .mainRow .BarberRightColumn .Feedbacks .FR .ratingstar {
+          width: 20px; }
+        .BarberPage .mainRow .BarberRightColumn .Feedbacks .FR .ratingvalue {
+          font-size: 100%;
+          color: orange;
+          margin-right: 1em; }
+      .BarberPage .mainRow .BarberRightColumn .Feedbacks .FI {
+        padding-left: 20px; }
+      .BarberPage .mainRow .BarberRightColumn .Feedbacks .FeedbackTextarea {
+        background-color: #d3f5f3; }
+
+/* სტილისტის ნამუშევრების გალერეა. */
+.BarberFlipster {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+  text-align: center;
+  color: navajowhite;
+  font-size: 200%;
+  font-weight: 400; }
+  .BarberFlipster .carousel {
+    width: 300px;
+    margin: 100px auto 0;
+    overflow: visible; }
+    .BarberFlipster .carousel img {
+      -webkit-box-reflect: below 20px linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)); }
+
+/* Footer-ი.
+-------------------------------------------------- */
+footer {
+  background-color: #1e2734; }
+  footer .footertext {
+    text-decoration: none;
+    margin: 0.5em;
+    color: #9abef5; }
+  footer .footertext:hover {
+    color: white;
+    margin: 0.5em; }
+  footer .copyright {
+    color: #979595;
+    text-align: center; }
+
+/*  =========  Media  ===============  */
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4; }
+
+  .featurette-heading {
+    font-size: 50px; } }
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem; } }
+@media (max-width: 450px) {
+  body {
+    padding-top: 3.5rem; }
+
+  #reg-login-btns {
+    margin-top: 5.5em; }
+
+  .carouselimg {
+    width: 450px; }
+
+  .frontimg {
+    width: 60%; }
+
+  .carousel-item {
+    height: 11rem; }
+
+  #UserDropdown {
+    margin: 1em 0 0.5em 0; }
+
+  .carousel {
+    margin-top: -0.15em; }
+
+  .AuthDiv {
+    right: -5.5em; }
+
+    /* ჰეადერი
+-------------------------------------------------- */
+  #navbarCollapse {
+    margin-top: 2em;
+    margin-left: 15px; }
+
+  #Headeri {
+    padding-left: 15px;
+    padding-right: 15px; }
+    #Headeri a .LogoImg {
+      width: 80px;
+      position: absolute;
+      top: -3px; }
+
+    /* საიტის სერვისი.
+-------------------------------------------------- */
+  .marketing .featurette {
+    font-size: 70%; }
+    .marketing .featurette .col-md-7 h3 {
+      font-family: GeoArt;
+      text-align: center;
+      color: #2d3338;
+      font-weight: bold;
+      font-size: 200%; }
+
+  /* მთავრი სვეტი. */
+  .SalonPhotoDiv {
+    margin-bottom: 2em; }
+    .SalonPhotoDiv .SalonPhoto {
+      width: 100%;
+      margin-bottom: 0; }
+
+  /* თანამშრომლის კარტები. */
+  .StaffCardsDiv {
+    height: 90vh;
+    overflow-x: hidden; }
+    .StaffCardsDiv .Staffcard {
+      width: 260px;
+      height: 380px; }
+      .StaffCardsDiv .Staffcard .imgBox {
+        height: 290px;
+        overflow-y: hidden; }
+        .StaffCardsDiv .Staffcard .imgBox .Staffimg {
+          position: relative;
+          width: 100%; }
+      .StaffCardsDiv .Staffcard .Fio {
+        font-size: 75%; }
+      .StaffCardsDiv .Staffcard .Stats {
+        width: 100%; }
+
+    /* სალონი /
+-------------------------------------------------- */
+  .salonPage {
+    overflow-x: hidden; }
+    .salonPage .mainRow {
+      /* სალონი /მარცხენა სვეტი. */
+      /* სალონი / ცენტრალური სვეტი. */
+      /* სალონი / მარჯვენა სვეტი. */ }
+      .salonPage .mainRow .salonCentralColumn {
+        /* თანამშრომლის კარტები. */ }
+        .salonPage .mainRow .salonCentralColumn .SalonPhotoDiv {
+          height: auto;
+          margin-top: 5em; }
+        .salonPage .mainRow .salonCentralColumn .StaffCardsDiv {
+          margin-bottom: 5em; }
+      .salonPage .mainRow .SalonRightColumn {
+        /* უკუკავშირი. */ }
+        .salonPage .mainRow .SalonRightColumn .WorkDays {
+          /* რეიტინგის სტატისტიკა. */ }
+
+  /* სტილისტის გვერდი. */
+  .BarberPage {
+    overflow-x: hidden; }
+    .BarberPage .GeoArtText {
+      font-size: 150%; }
+    .BarberPage .mainRow .barberLeftPage .BarberImgDiv {
+      height: auto; }
+    .BarberPage .mainRow .barberLeftPage .card {
+      padding: 10px; }
+      .BarberPage .mainRow .barberLeftPage .card .card-body .abilities {
+        overflow-x: scroll; }
+        .BarberPage .mainRow .barberLeftPage .card .card-body .abilities table .service input {
+          width: 250px; }
+    .BarberPage .mainRow .BarberRightColumn .WorkDays {
+      /* რეიტინგის სტატისტიკა. */ } }
+
+/*# sourceMappingURL=main.css.map */
